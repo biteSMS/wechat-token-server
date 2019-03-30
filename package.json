@@ -1,0 +1,29 @@
+{
+  "name": "wechat-token-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf dist && tsc && node dist/app.js",
+    "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts"
+  },
+  "keywords": [],
+  "author": "bibi",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "typescript": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "@types/redis": "^2.8.12",
+    "@types/request": "^2.48.1",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.3"
+  }
+}
