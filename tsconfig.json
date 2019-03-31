@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
       "module": "commonjs",
-      "target": "es2017",
+      "target": "esnext",
       "noImplicitAny": true,
       "outDir": "dist",
       "sourceMap": true
   },
   "include": [
-      "src/**/*",
+      "**/*",
   ],
   "exclude": [
     "node_modules",

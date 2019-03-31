@@ -1,4 +1,4 @@
-import * as Koa from 'Koa'
+import * as Koa from 'koa'
 import router from './routes'
 
 const app = new Koa()

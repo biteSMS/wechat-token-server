@@ -1,5 +1,5 @@
 import * as Router from 'koa-router'
-import { TokenController } from '../controllers/TokenController'
+import { TokenController } from '../Controllers/TokenController'
 
 const router = new Router()
 
