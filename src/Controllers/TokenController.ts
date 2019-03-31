@@ -30,7 +30,7 @@ export class TokenController {
     }
   }
 
-  private static async requestAccessToken(): Promise<AccessToken> {
+  private static requestAccessToken(): Promise<AccessToken> {
     return new Promise((resolve, reject) => {
       const { appid, secret } = wechat
       request.get(akURL(appid, secret), (err, res, body) => {
