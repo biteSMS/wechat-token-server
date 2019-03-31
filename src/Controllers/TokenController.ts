@@ -1,6 +1,6 @@
 import { Context } from "koa"
 import * as request from "request"
-import { client } from '../redis'
+import { client } from "../redis"
 import { wechat } from "../config"
 
 interface AccessToken {
@@ -13,13 +13,20 @@ const akURL: (appid: string, secret: string) => string = (appid, secret) => {
 }
 
 export class TokenController {
-
   public static async returnToken(ctx: Context) {
-    let access_token = await TokenController.getAccessToken()
-    ctx.status = 200
-    ctx.body = {
-      code: 0,
-      access_token
+    try {
+      let access_token = await TokenController.getAccessToken()
+      ctx.status = 200
+      ctx.body = {
+        code: 0,
+        access_token
+      }
+    } catch (err) {
+      console.log(err)
+      ctx.status = 400
+      ctx.body = {
+        code: 1
+      }
     }
   }
 
@@ -40,7 +47,7 @@ export class TokenController {
   ): Promise<void> {
     return new Promise((resolve, reject) => {
       client.set("access_token", access_token, "EX", expires_in, err => {
-        if (err) reject()
+        if (err) reject(err)
         resolve()
       })
     })
