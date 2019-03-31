@@ -8,7 +8,7 @@
 
 ## 使用方法
 
-先clone本项目
+先clone本项目，修改config文件夹中的配置文件。
 
 - 使用Docker
 
@@ -25,8 +25,8 @@
 
 ```json
 {
-	"code": 0,
-	"access_token": "access_token"
+  "code": 0,
+  "access_token": "access_token"
 }
 ```
 
@@ -34,7 +34,7 @@
 
 ```json
 {
-	"code": 1
+  "code": 1
 }
 ```
 
