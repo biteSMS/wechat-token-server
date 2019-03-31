@@ -1,14 +1,7 @@
 import { Context } from "koa"
 import * as request from "request"
-import * as redis from "redis"
-import { redis as redisConfig } from "../config"
+import { client } from '../redis'
 import { wechat } from "../config"
-
-const client = redis.createClient(redisConfig)
-
-client.on("connect", () => console.log("redis is connected"))
-client.on("error", err => console.log(`redis error: ${err}`))
-client.on("end", () => console.log("redis is on end"))
 
 interface AccessToken {
   access_token: string
@@ -20,11 +13,12 @@ const akURL: (appid: string, secret: string) => string = (appid, secret) => {
 }
 
 export class TokenController {
+
   public static async returnToken(ctx: Context) {
     let access_token = await TokenController.getAccessToken()
     ctx.status = 200
     ctx.body = {
-      status: 1,
+      code: 0,
       access_token
     }
   }
