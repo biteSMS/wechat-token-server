@@ -12,9 +12,13 @@
 
 - 使用Docker
 
+  ```shell
+  $ docker-compose up -d
+  ```
+
 - 一般情况
 
-  ```
+  ```shell
   $ npm install
   $ npm start
   ```

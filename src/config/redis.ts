@@ -1,7 +1,8 @@
 import { ClientOpts } from 'redis'
 
+//使用Docker不需要修改该配置文件
 export const redis: ClientOpts = {
-  host: '127.0.0.1',
+  host: 'redis',
   port: 6379,
   db: 0
 }
